@@ -70,16 +70,6 @@ A few non-obvious lessons from building this:
 - **Embedding dimensionality should scale with vocabulary size.** For a ~150–200 word vocabulary, a large embedding dimension (e.g. 42+) is under-constrained and produces noisier low-dimensional projections. A smaller dimension (~10) forces more meaningful compression.
 - **PCA vs. t-SNE is not just a style choice.** The same trained vectors can look diffuse under PCA and clearly clustered under t-SNE — projection choice changes what story the visualization tells.
 
-## Project Structure
-
-```
-.
-├── word2vec.py          # Full training + evaluation pipeline
-├── corpus.py            # Hand-designed training corpus
-├── visualize.py         # t-SNE / similarity heatmap plotting
-└── README.md
-```
-
 ## Usage
 
 ```bash
@@ -105,6 +95,3 @@ This is an educational implementation, not a production-grade or performance-opt
 
 For production use cases, `gensim`, `spaCy`, or transformer-based embeddings (e.g. `sentence-transformers`) are the right tool.
 
-## License
-
-MIT
